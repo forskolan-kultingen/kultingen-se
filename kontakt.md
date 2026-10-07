@@ -1,7 +1,7 @@
 ---
 layout: kontakt
 permalink: /kontakt
-rubrik: Välkommen till vår LUMMIGA gård!
+rubrik: HEJ! Välkommen till vår LUMMIGA gård!
 bild:
   src: /assets/img/valkommen-1500.webp
   alt: "Foto: Solig höstdag på vår gård."
