@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<section class="wrap split">
+  <div class="prose">
+    <h1>{{ page.rubrik }}</h1>
+    {{ content }}
+  </div>
+  <figure class="photo">
+    {% include bild.html bild=page.bild %}
+  </figure>
+</section>
+
+<section class="band section-gap">
+  <div class="wrap">
+    <div class="prose">
+      <h2 class="small">{{ page.oppettider_rubrik }}</h2>
+      {{ page.oppettider | markdownify }}
+    </div>
+    {%- comment -%} Ska finnas för den som söker plats, men är hopfällt: bara rubriken syns. {%- endcomment %}
+    <details class="prose fineprint">
+      <summary>{{ page.avsteg_rubrik }}</summary>
+      {{ page.avsteg | markdownify }}
+    </details>
+  </div>
+</section>

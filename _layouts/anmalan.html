@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- capture termin -%}<span data-termin>{{ page.termin }}</span>{%- endcapture -%}
+<section class="wrap">
+  <div class="prose narrow">
+    <h1>{{ page.rubrik }}</h1>
+    {{ page.ingress | markdownify | replace: '[termin]', termin }}
+    <dl class="facts facts-inline">
+      <div><dt>Telefon:</dt><dd><a href="tel:{{ site.data.kontakt.telefon_lank }}">{{ site.data.kontakt.telefon }}</a></dd></div>
+      <div><dt>Mejl:</dt><dd><a href="mailto:{{ site.data.kontakt.mejl }}">{{ site.data.kontakt.mejl }}</a></dd></div>
+    </dl>
+    {{ content }}
+  </div>
+</section>
+{%- comment -%}
+  [termin] i texten blir den aktuella terminen, lite i förväg: juli till
+  november HT, december VT året efter, januari till juni VT. Fältet "termin"
+  syns om JavaScript är avstängt.
+{%- endcomment %}
+<script>
+  (() => {
+    const d = new Date();
+    const m = d.getMonth(); // 0 = januari, 11 = december
+    const t = m === 11 ? "VT " + (d.getFullYear() + 1)
+            : (m < 6 ? "VT " : "HT ") + d.getFullYear();
+    document.querySelectorAll("[data-termin]").forEach(el => { el.textContent = t; });
+  })();
+</script>

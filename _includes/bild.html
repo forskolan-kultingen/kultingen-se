@@ -1,0 +1,14 @@
+{%- comment -%}
+  En bild med srcset. include.bild = { src, alt, bredd, hojd } från sidans fält.
+  Heter filen ...-1500.webp och finns en ...-750.webp bredvid används den som
+  mindre variant. include.sizes och include.lazy är valfria.
+{%- endcomment -%}
+{%- assign b = include.bild -%}
+{%- assign liten = nil -%}
+{%- if b.src contains '-1500.' -%}{%- assign liten = b.src | replace: '-1500.', '-750.' -%}{%- endif -%}
+<img src="{{ liten | default: b.src | relative_url }}"
+{%- if liten %}
+         srcset="{{ liten | relative_url }} 750w, {{ b.src | relative_url }} {{ b.bredd | default: 1500 }}w"
+         sizes="{{ include.sizes | default: '(min-width: 44rem) 34rem, 92vw' }}"
+{%- endif %}
+         alt="{{ b.alt }}"{% if b.bredd %} width="{{ b.bredd }}"{% endif %}{% if b.hojd %} height="{{ b.hojd }}"{% endif %}{% if include.lazy %} loading="lazy"{% endif %}>

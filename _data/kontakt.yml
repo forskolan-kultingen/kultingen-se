@@ -1,0 +1,13 @@
+# Kontaktuppgifter. Står i sidfoten på alla sidor och på Kontakt, Anmälan och
+# Klagomålshantering, så de ändras bara här.
+oppettider: måndag till fredag 8.00-17.00
+adress: Åsögatan 72, 118 29 Stockholm
+telefon: 072- 32 4 89 00
+# Samma nummer utan mellanslag, för att det ska gå att ringa genom att trycka.
+telefon_lank: 072-3248900
+mejl: info@kultingen.se
+# Kartan på Kontakt (OpenStreetMap): markören och utsnittet runt den
+# (västra longitud, södra latitud, östra longitud, norra latitud).
+karta_lat: "59.31164"
+karta_lon: "18.06788"
+karta_utsnitt: "18.0580,59.3080,18.0780,59.3150"

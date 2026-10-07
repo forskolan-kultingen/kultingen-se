@@ -1,0 +1,209 @@
+# Pages CMS (https://app.pagescms.org): vad som går att redigera och hur.
+# Varje sida har sina fält; allt sparas som commits i det här repot och
+# GitHub Pages bygger om sajten automatiskt.
+
+media:
+  input: assets/img
+  output: /assets/img
+  extensions: [webp, jpg, jpeg, png, svg]
+
+content:
+  - name: start
+    label: Startsidan
+    type: file
+    path: index.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: start }
+      - { name: permalink, type: string, hidden: true, default: / }
+      - { name: titel, label: Titel i webbläsarfliken, type: string }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: ingress, label: Text under rubriken, type: text }
+      - name: knapp
+        label: Knappen
+        type: object
+        fields:
+          - { name: text, label: Text på knappen, type: string }
+          - { name: sida, label: Leder till (t.ex. /anmlan), type: string }
+      - name: citat
+        label: Föräldracitatet
+        type: object
+        fields:
+          - { name: text, label: Citat, type: text }
+          - { name: avsandare, label: Vem som sa det, type: string }
+      - name: bild
+        label: Bilden bredvid texten
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+      - name: ledigt
+        label: Raden ovanför bubblorna (**fetstil** blir blå)
+        type: string
+      - { name: ledigt_sida, label: Raden leder till, type: string }
+      - name: bubblor
+        label: Såpbubblorna (högst sex)
+        type: object
+        list: { max: 6 }
+        fields:
+          - { name: text, label: Text i bubblan, type: text }
+          - { name: sida, label: Leder till, type: string }
+      - name: vidare
+        label: Läs vidare (bildlänkarna längst ner)
+        type: object
+        list: true
+        fields:
+          - { name: rubrik, label: Rubrik, type: string }
+          - { name: sida, label: Leder till, type: string }
+          - { name: bild, label: Bild, type: image }
+
+  - name: pedagogik
+    label: Pedagogik
+    type: file
+    path: vr-vrdegrund.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: pedagogik }
+      - { name: permalink, type: string, hidden: true, default: /vr-vrdegrund }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: ingress, label: Text under rubriken, type: text }
+      - { name: punkter, label: Punktlistan, type: text, list: true }
+      - name: bild
+        label: Bilden bredvid listan
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+      - { name: pedagoger_rubrik, label: Rubrik för pedagogerna, type: string }
+      - { name: pedagoger, label: Text om pedagogerna, type: rich-text }
+      - name: pedagoger_bild
+        label: Bilden bredvid pedagogerna
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+      - name: galleri
+        label: Bildgalleriet
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+
+  - name: kooperativet
+    label: Om Kooperativet
+    type: file
+    path: om-kooperativet.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: kooperativ }
+      - { name: permalink, type: string, hidden: true, default: /om-kooperativet }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: body, label: Text, type: rich-text }
+      - name: bild
+        label: Bilden
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+      - { name: oppettider_rubrik, label: Rubrik för öppettiderna, type: string }
+      - { name: oppettider, label: Text om öppettiderna, type: text }
+      - { name: avsteg_rubrik, label: Rubrik för avsteget (hopfällt), type: string }
+      - { name: avsteg, label: Text om avsteget, type: rich-text }
+
+  - name: anmalan
+    label: Anmälan och kö
+    type: file
+    path: anmlan.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: anmalan }
+      - { name: permalink, type: string, hidden: true, default: /anmlan }
+      - { name: rubrik, label: Rubrik, type: string }
+      - name: ingress
+        label: Första stycket ([termin] byts automatiskt mot aktuell termin)
+        type: text
+      - name: termin
+        label: Termin som visas om JavaScript är avstängt
+        type: string
+      - { name: body, label: Resten av sidan, type: rich-text }
+
+  - name: kontakt
+    label: Kontakta oss
+    type: file
+    path: kontakt.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: kontakt }
+      - { name: permalink, type: string, hidden: true, default: /kontakt }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: body, label: Text, type: rich-text }
+      - name: bild
+        label: Bilden
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+
+  - name: jobba
+    label: Jobba hos oss
+    type: file
+    path: jobba-hos-oss.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: text }
+      - { name: permalink, type: string, hidden: true, default: /jobba-hos-oss }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: body, label: Text, type: rich-text }
+      - { name: bild, label: Teckning under texten, type: image }
+
+  - name: klagomal
+    label: Klagomålshantering
+    type: file
+    path: klagomalshantering.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: text }
+      - { name: permalink, type: string, hidden: true, default: /klagomalshantering }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: visa_adress, label: Visa adressen överst, type: boolean }
+      - { name: body, label: Text, type: rich-text }
+
+  - name: kontaktuppgifter
+    label: Kontaktuppgifter (sidfoten m.m.)
+    type: file
+    path: _data/kontakt.yml
+    format: yaml
+    fields:
+      - { name: oppettider, label: Öppettider, type: string }
+      - { name: adress, label: Adress, type: string }
+      - { name: telefon, label: Telefon (som det visas), type: string }
+      - { name: telefon_lank, label: Telefon utan mellanslag (för att ringa), type: string }
+      - { name: mejl, label: Mejl, type: string }
+      - { name: karta_lat, label: "Kartans markör, latitud", type: string }
+      - { name: karta_lon, label: "Kartans markör, longitud", type: string }
+      - { name: karta_utsnitt, label: "Kartans utsnitt (väst,syd,öst,nord)", type: string }
+
+  - name: meny
+    label: Menyn
+    type: file
+    path: _data/meny.yml
+    format: yaml
+    fields:
+      - name: huvud
+        label: Huvudmenyn
+        type: object
+        list: true
+        fields:
+          - { name: text, label: Text, type: string }
+          - { name: sida, label: Leder till, type: string }
+      - name: sidfot
+        label: Länkarna i sidfoten
+        type: object
+        list: true
+        fields:
+          - { name: text, label: Text, type: string }
+          - { name: sida, label: Leder till, type: string }

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="wrap split">
+  <div class="prose">
+    <h1>{{ page.rubrik }}</h1>
+    {{ content }}
+    <dl class="facts">
+      <div><dt>Adress: </dt><dd>{{ site.data.kontakt.adress }}</dd></div>
+      <div><dt>Telefon:</dt><dd><a href="tel:{{ site.data.kontakt.telefon_lank }}">{{ site.data.kontakt.telefon }}</a></dd></div>
+      <div><dt>Mejl:</dt><dd><a href="mailto:{{ site.data.kontakt.mejl }}">{{ site.data.kontakt.mejl }}</a></dd></div>
+    </dl>
+  </div>
+  <figure class="doodled">
+    {% include bild.html bild=page.bild sizes="(min-width: 52rem) 34rem, 92vw" %}
+  </figure>
+</section>
+
+{%- assign k = site.data.kontakt %}
+<section class="wrap section-gap">
+  <iframe class="map" title="{{ k.adress }}" loading="lazy"
+    src="https://www.openstreetmap.org/export/embed.html?bbox={{ k.karta_utsnitt | replace: ',', '%2C' }}&amp;layer=mapnik&amp;marker={{ k.karta_lat }}%2C{{ k.karta_lon }}"></iframe>
+</section>

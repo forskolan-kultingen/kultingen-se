@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{%- comment -%}
+  Enkel textsida (Jobba hos oss, Klagomålshantering). "visa_adress" sätter
+  adressen överst, för texter som hänvisar till "förskolans adress (se ovan)".
+  "bild" är en valfri teckning under texten.
+{%- endcomment %}
+<section class="wrap">
+  <div class="prose narrow">
+    <h1>{{ page.rubrik | replace: 'klagomålshantering', 'klagomåls&shy;hantering' }}</h1>
+    {%- if page.visa_adress %}
+    <dl class="facts">
+      <div><dt>Adress: </dt><dd>{{ site.data.kontakt.adress }}</dd></div>
+    </dl>
+    {%- endif %}
+    {{ content }}
+  </div>
+  {%- if page.bild %}
+  <div class="center-doodle">
+    <img src="{{ page.bild | relative_url }}" alt="">
+  </div>
+  {%- endif %}
+</section>

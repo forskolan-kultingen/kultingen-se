@@ -1,0 +1,19 @@
+# Huvudmenyn, i ordning. "sida" är adressen till sidan.
+huvud:
+  - text: Om Kultingen
+    sida: /
+  - text: Pedagogik
+    sida: /vr-vrdegrund
+  - text: Om Kooperativet
+    sida: /om-kooperativet
+  - text: Anmälan och kö
+    sida: /anmlan
+  - text: Kontakta oss
+    sida: /kontakt
+
+# Länkarna längst ner i sidfoten.
+sidfot:
+  - text: Jobba hos oss
+    sida: /jobba-hos-oss
+  - text: Klagomålshantering
+    sida: /klagomalshantering

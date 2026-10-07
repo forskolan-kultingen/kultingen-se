@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- assign titel = page.titel | default: site.title %}
+<title>{{ titel }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta property="og:title" content="{{ titel }}">
+<meta property="og:description" content="{{ site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ '/assets/img/logo-750.webp' | absolute_url }}">
+<meta name="theme-color" content="#fffcf6">
+<link rel="icon" href="{{ '/assets/img/gris-750.webp' | relative_url }}" type="image/webp">
+<link rel="preload" href="{{ '/assets/fonts/jost.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- comment -%} Ny adress vid varje bygge, så att ingen fastnar med en gammal stilmall. {%- endcomment %}
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Huvudmeny">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/logo-750.webp' | relative_url }}" alt="Föräldrakooperativet Kultingen" width="506" height="211">
+    </a>
+    <ul class="nav-list">
+{%- for punkt in site.data.meny.huvud %}
+      <li><a href="{{ punkt.sida | relative_url }}"{% if page.url == punkt.sida %} aria-current="page"{% endif %}>{{ punkt.text }}</a></li>
+{%- endfor %}
+    </ul>
+  </nav>
+</header>
+<main id="innehall">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-gris" href="{{ '/' | relative_url }}"><img src="{{ '/assets/img/gris-750.webp' | relative_url }}" alt="Om Kultingen" width="298" height="250"></a>
+    <dl class="footer-facts">
+      <div><dt>Öppettider</dt><dd>{{ site.data.kontakt.oppettider }}</dd></div>
+      <div><dt>Adress: </dt><dd>{{ site.data.kontakt.adress }}</dd></div>
+      <div><dt>Telefon:</dt><dd><a href="tel:{{ site.data.kontakt.telefon_lank }}">{{ site.data.kontakt.telefon }}</a></dd></div>
+      <div><dt>Mejl:</dt><dd><a href="mailto:{{ site.data.kontakt.mejl }}">{{ site.data.kontakt.mejl }}</a></dd></div>
+    </dl>
+    <ul class="footer-links">
+{%- for punkt in site.data.meny.sidfot %}
+      <li><a href="{{ punkt.sida | relative_url }}">{{ punkt.text }}</a></li>
+{%- endfor %}
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

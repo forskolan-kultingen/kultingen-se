@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="wrap split intro" id="om">
+  <div class="prose">
+    <h1>{{ page.rubrik }}</h1>
+    {{ page.ingress | markdownify }}
+    <p class="actions"><a class="button" href="{{ page.knapp.sida | relative_url }}">{{ page.knapp.text }}</a></p>
+    <figure class="quote quote-inline">
+      <blockquote>
+        <p>{{ page.citat.text }}</p>
+      </blockquote>
+      <figcaption>&mdash; {{ page.citat.avsandare }}</figcaption>
+    </figure>
+  </div>
+  <figure class="doodled">
+    {% include bild.html bild=page.bild %}
+  </figure>
+</section>
+
+{%- comment -%} Såpbubblorna ritas av tools/bubblor.mjs; plats för sex. {%- endcomment %}
+<section class="wrap bubbles" aria-label="Kultingen">
+  <p class="bubbles-lead"><a href="{{ page.ledigt_sida | relative_url }}">{{ page.ledigt | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a></p>
+  <ul>
+{%- for bubbla in page.bubblor limit: 6 %}
+    <li class="b{{ forloop.index }}"><a href="{{ bubbla.sida | relative_url }}">{{ bubbla.text }}</a></li>
+{%- endfor %}
+  </ul>
+  <span class="tiny tiny-1" aria-hidden="true"></span>
+  <span class="tiny tiny-2" aria-hidden="true"></span>
+  <span class="tiny tiny-3" aria-hidden="true"></span>
+</section>
+
+<nav class="wrap next" aria-label="Läs vidare">
+{%- for vidare in page.vidare %}
+  <a href="{{ vidare.sida | relative_url }}">
+    <img src="{{ vidare.bild | relative_url }}" alt="" loading="lazy">
+    <span>{{ vidare.rubrik }}</span>
+  </a>
+{%- endfor %}
+</nav>

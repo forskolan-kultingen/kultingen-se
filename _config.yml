@@ -1,0 +1,26 @@
+# Föräldrakooperativet Kultingen. Byggs av GitHub Pages (Jekyll) vid varje
+# ändring, så det finns inget eget byggsteg. Innehållet redigeras i
+# Pages CMS (app.pagescms.org), se .pages.yml och README.md.
+
+title: Föräldrakooperativet Kultingen
+description: Bästa förskolan på södermalm stockholm
+lang: sv
+
+# Förhandsvisning: https://forskolan-kultingen.github.io/kultingen-se/
+# När kultingen.se pekar hit: url "https://kultingen.se", baseurl "" och
+# en fil CNAME med raden kultingen.se (se README.md).
+url: "https://forskolan-kultingen.github.io"
+baseurl: "/kultingen-se"
+
+markdown: kramdown
+kramdown:
+  # Rakt citattecken ska förbli raka; texten är förskolans egen.
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  auto_ids: false
+
+exclude:
+  - README.md
+  - tools
+
+# Ingen standardtema från GitHub Pages; all layout finns i _layouts/.
+theme: null

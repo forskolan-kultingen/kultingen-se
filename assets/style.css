@@ -1,0 +1,636 @@
+/* Kultingen. Färgerna är plockade ur det som redan finns: den röda
+   logotypen, den blå grisen på kontaktsidan och den gula solen på gården. */
+
+@font-face {
+  font-family: "Jost";
+  src: url("fonts/jost.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("fonts/jost-italic.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --paper: #fffcf6;
+  --ink: #3b2a27;
+  --ink-soft: #6d5a55;
+  --red: #d2232a;
+  --blue: #1f2fd0;
+  --sun: #ffd000;
+  --sun-wash: #fff5d2;
+  --line: #efe4d6;
+
+  --measure: 36rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --space: clamp(4rem, 9vw, 7.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.7 "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a {
+  color: var(--blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--red); }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* --- rubriker: versaler med luft, som på gamla sajten --- */
+
+h1, h2, h3 {
+  color: var(--red);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+  /* långa ord i versaler ("KLAGOMÅLSHANTERING") får inte spräcka en smal skärm */
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+h1 { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.15rem); }
+h2 { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.55rem); }
+h2.small, h3 {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.prose { max-width: var(--measure); }
+.prose p { margin: 0 0 1.1em; }
+.prose > * + h2 { margin-top: 2.6rem; }
+.prose strong { font-weight: 600; color: var(--red); }
+
+.prose ul, .prose ol { margin: 0 0 1.2em; padding: 0; }
+.prose li { margin: 0 0 0.6em; }
+.prose ul { list-style: none; }
+.prose ul li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.68em;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--red);
+}
+.prose ol { padding-left: 1.4rem; }
+.prose ol li::marker { color: var(--red); font-weight: 600; }
+
+/* --- sidhuvud ---
+   Mobile first: logotypen centrerad överst och menyn centrerad under den.
+   Från 64rem (1024 px) står logotypen till vänster, i linje med texten
+   under (samma .wrap), och menyn direkt efter den. Smalare än så bryter
+   menyn annars till en andra rad bredvid logotypen (sett vid 1000 px). */
+
+.site-header { padding-top: 1rem; }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand { display: block; width: clamp(9rem, 36vw, 11.5rem); }
+.brand img { mix-blend-mode: multiply; }
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.95rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: inline-block;
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-block: 0.45rem;
+}
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  color: var(--blue);
+  text-decoration: underline wavy;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.55em;
+}
+
+@media (min-width: 64rem) {
+  .site-header { padding-top: clamp(1.5rem, 3vw, 2.25rem); }
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  }
+  .nav-list { justify-content: flex-start; }
+  .brand { width: clamp(11rem, 15vw, 13.5rem); }
+  .nav-list { gap: 0 clamp(1.25rem, 2.2vw, 2.25rem); }
+  .nav-list a { font-size: 0.8125rem; letter-spacing: 0.14em; }
+}
+
+main { padding-top: clamp(2rem, 6vw, 4.5rem); }
+
+/* --- layout --- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+/* Två spalter redan från surfplattebredd: i en spalt blir de höga fotona
+   (4:5 och uppåt) runt 1000 px höga på en 768 px skärm. */
+@media (max-width: 43.99rem) {
+  .split { grid-template-columns: 1fr; }
+  .split > figure {
+    width: 100%;
+    max-width: 30rem;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 44rem) and (max-width: 64rem) {
+  .split { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .split.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+}
+@media (max-width: 52rem) {
+  .cols { grid-template-columns: 1fr; }
+}
+
+figure { margin: 0; }
+
+/* bilden med solen och den böjda texten ritar utanför fotot, så den får
+   ingen ram och inget eget hörn: den ska se ut som ett klistermärke */
+.doodled { margin-top: -1.5rem; }
+/* originalet har vit bakgrund runt solen; multiply låter papperet synas igenom */
+.doodled img { mix-blend-mode: multiply; }
+
+.photo img { border-radius: 3px; }
+
+/* --- citatet --- */
+
+.quote {
+  padding-block: var(--space);
+  text-align: center;
+}
+.quote blockquote { margin: 0 auto; max-width: 42rem; }
+.quote p {
+  margin: 0;
+  color: var(--blue);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.45rem, 1rem + 1.8vw, 2.3rem);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.quote figcaption {
+  margin-top: 1.5rem;
+  color: var(--red);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* --- såpbubblorna under citatet ---
+   Handritade ringar (tools/bubblor.mjs) i logotypens röda, med en USP i varje.
+   Mobile first: en sicksack som överlappar lite, två i bredd på surfplatta,
+   sex som svävar på olika höjd på dator. */
+
+/* citatet i introts vänsterspalt, under knappen, bredvid solbilden */
+.quote-inline {
+  margin-top: clamp(2.25rem, 5vw, 3.25rem);
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+.quote-inline blockquote { margin: 0; max-width: none; }
+.prose .quote-inline p {
+  margin: 0;
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+.quote-inline figcaption { margin-top: 0.9rem; font-size: 0.75rem; }
+/* på mobil (en spalt) står citatet centrerat; bredvid bilden vänsterställt */
+@media (max-width: 43.99rem) {
+  .quote-inline { text-align: center; }
+  .prose .quote-inline p { text-wrap: balance; }
+}
+
+.intro + .bubbles { margin-top: clamp(3.5rem, 9vw, 6.5rem); }
+.bubbles + .next { padding-top: 0; }
+
+.bubbles {
+  position: relative;
+  padding-bottom: var(--space);
+}
+.bubbles-lead {
+  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.bubbles-lead a { color: var(--red); text-decoration: none; }
+.bubbles-lead strong { color: var(--blue); font-weight: 600; }
+.bubbles-lead a:hover { text-decoration: underline wavy; text-decoration-thickness: 1.5px; text-underline-offset: 0.45em; }
+
+.bubbles ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.bubbles li {
+  --d: min(66vw, 17rem);
+  width: var(--d);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--d) * 0.17);
+  background: center / contain no-repeat;
+  text-align: center;
+}
+.bubbles li + li { margin-top: calc(var(--d) * -0.14); }
+.bubbles li:nth-child(even) { align-self: flex-end; }
+.bubbles li:nth-child(odd) { align-self: flex-start; }
+.bubbles .b1 { background-image: url("img/bubbla-1.svg"); }
+.bubbles .b2 { background-image: url("img/bubbla-2.svg"); }
+.bubbles .b3 { background-image: url("img/bubbla-3.svg"); --d: min(76vw, 19.5rem); }
+.bubbles .b4 { background-image: url("img/bubbla-4.svg"); --d: min(56vw, 14rem); }
+.bubbles .b5 { background-image: url("img/bubbla-5.svg"); }
+.bubbles .b6 { background-image: url("img/bubbla-6.svg"); --d: min(60vw, 15rem); }
+
+.bubbles li a {
+  display: block;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-decoration: none;
+  text-wrap: balance;
+}
+.bubbles li a::first-letter { text-transform: uppercase; }
+.bubbles li a:hover { color: var(--red); }
+
+/* bubblor svävar, långsamt och var och en i sin egen takt */
+@media (prefers-reduced-motion: no-preference) {
+  .bubbles li { animation: sväva 7s ease-in-out infinite alternate; }
+  .bubbles li:nth-child(2) { animation-duration: 8.5s; animation-delay: -2s; }
+  .bubbles li:nth-child(3) { animation-duration: 9s; animation-delay: -4s; }
+  .bubbles li:nth-child(4) { animation-duration: 7.5s; animation-delay: -1s; }
+  .bubbles li:nth-child(5) { animation-duration: 8s; animation-delay: -3s; }
+  .bubbles li:nth-child(6) { animation-duration: 9.5s; animation-delay: -5s; }
+}
+@keyframes sväva {
+  from { transform: translateY(0); }
+  to { transform: translateY(-0.6rem); }
+}
+
+.tiny {
+  position: absolute;
+  width: 2.2rem;
+  aspect-ratio: 1;
+  background: center / contain no-repeat;
+  pointer-events: none;
+}
+/* små tomma bubblor i luckorna som sicksacken lämnar: höger om de udda,
+   vänster om de jämna */
+.tiny-1 { background-image: url("img/bubbla-liten-1.svg"); top: 14%; right: 9%; width: 1.6rem; }
+.tiny-2 { background-image: url("img/bubbla-liten-2.svg"); top: 36%; left: 6%; }
+.tiny-3 { background-image: url("img/bubbla-liten-3.svg"); bottom: 12%; left: 12%; width: 1.3rem; }
+
+@media (min-width: 40rem) {
+  .bubbles ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 1.5rem;
+    /* exakt två i bredd, annars krockar sicksacken med en tredje */
+    max-width: 36rem;
+    margin-inline: auto;
+  }
+  .bubbles li { --d: 15.5rem; }
+  .bubbles li + li { margin-top: 0; }
+  .bubbles li:nth-child(even) { translate: 0 2.5rem; }
+  /* ute i marginalerna bredvid bubblorna */
+  .tiny-1 { top: 16%; right: 2%; left: auto; }
+  .tiny-2 { top: 50%; left: 2%; }
+  .tiny-3 { bottom: 10%; right: 3%; left: auto; }
+  .bubbles .b3 { --d: 17.5rem; }
+  .bubbles .b4 { --d: 13.5rem; }
+  .bubbles .b6 { --d: 14rem; }
+}
+
+@media (min-width: 56rem) {
+  /* max tre i bredd: 3 + 3 i stället för 4 + 2 */
+  .bubbles ul { gap: 0 0.75rem; max-width: 54rem; margin-inline: auto; }
+  .bubbles li a { font-size: 1rem; }
+  .bubbles li:nth-child(even) { translate: none; }
+  .bubbles li.b1 { margin-top: 1.5rem; }
+  .bubbles li.b2 { margin-top: 5rem; }
+  .bubbles li.b3 { margin-top: -0.5rem; }
+  .bubbles li.b4 { margin-top: -1.5rem; }
+  .bubbles li.b5 { margin-top: 1rem; }
+  .bubbles li.b6 { margin-top: -2rem; }
+  /* precis utanför klungan (54rem bred och centrerad), inte ute vid kanten */
+  .tiny-1 { top: 20%; right: max(0.5rem, calc(50% - 29.5rem)); }
+  .tiny-2 { top: 54%; left: max(0.5rem, calc(50% - 30rem)); }
+  .tiny-3 { bottom: 13%; right: max(0.75rem, calc(50% - 28.5rem)); }
+}
+
+/* --- förälderns väg: knapp, snabbfakta, vidare --- */
+
+.actions { margin-top: 1.75rem; }
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.4rem;
+  border-radius: 3px;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.button:hover { background: var(--blue); color: #fff; }
+
+
+.facts.facts-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin: 0 0 1.4em;
+}
+
+.next {
+  display: grid;
+  gap: 2.25rem;
+  padding-top: var(--space);
+}
+.next a {
+  display: block;
+  color: var(--red);
+  text-decoration: none;
+}
+.next img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.next span {
+  display: block;
+  margin-top: 0.9rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.next a:hover span {
+  color: var(--blue);
+  text-decoration: underline wavy;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.45em;
+}
+@media (min-width: 40rem) { .next { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); } }
+
+/* på mobil tar solbilden inte hela skärmen: knappen och bubblorna ska
+   komma fram snabbt */
+@media (max-width: 43.99rem) {
+  .intro .doodled { max-width: 20rem; }
+}
+
+/* --- finstilt: hopfällt, bara rubriken syns (avsteget från öppenhetskravet) --- */
+
+.fineprint {
+  margin-top: 2.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgb(59 42 39 / 0.14);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+.fineprint summary {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.fineprint summary::-webkit-details-marker { display: none; }
+/* tecknet ligger i CSS så att sidans text är exakt den gamla sajtens */
+.fineprint summary::before { content: "+"; font-weight: 400; }
+.fineprint[open] summary::before { content: "\2212"; }
+.fineprint summary:hover { color: var(--red); }
+.fineprint[open] summary { margin-bottom: 1rem; }
+.fineprint ul li::before { background: var(--ink-soft); }
+
+/* --- en lugn gul yta för det praktiska --- */
+
+.band {
+  background: var(--sun-wash);
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+/* --- sidfot --- */
+
+.site-footer {
+  margin-top: var(--space);
+  padding-block: clamp(2.5rem, 6vw, 3.75rem) calc(clamp(2.5rem, 6vw, 3.75rem) + env(safe-area-inset-bottom, 0px));
+  background: var(--red);
+  color: #fff;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+/* sidor som slutar med den gula ytan (Pedagogik, Om Kooperativet) går rakt
+   över i sidfoten, utan en remsa papper emellan */
+main:has(> .band:last-child) + .site-footer { margin-top: 0; }
+.footer-inner {
+  display: grid;
+  gap: 2rem;
+}
+/* grisen i vitt på rött: originalet är röda linjer på vit botten. Inverterad
+   blir botten svart och linjerna ljusa; screen gör det svarta genomskinligt. */
+.footer-gris { display: block; width: 4.25rem; }
+.footer-gris img {
+  filter: invert(1) grayscale(1) brightness(1.8);
+  mix-blend-mode: screen;
+}
+.footer-facts {
+  display: grid;
+  gap: 1.25rem 2rem;
+  margin: 0;
+}
+.footer-facts dt {
+  color: var(--sun);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.footer-facts dd { margin: 0.2rem 0 0; }
+.site-footer a {
+  color: #fff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+.site-footer a:hover { color: var(--sun); }
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgb(255 255 255 / 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  font-size: 0.875rem;
+}
+@media (min-width: 40rem) {
+  .footer-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 64rem) {
+  .footer-inner {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    column-gap: 3rem;
+  }
+  .footer-facts { grid-template-columns: repeat(4, auto); justify-content: space-between; }
+  .footer-links { grid-column: 2; }
+}
+
+/* --- sidor med två spalter --- */
+
+.section-gap { margin-top: var(--space); }
+.split.flip > figure { order: -1; }
+@media (max-width: 43.99rem) { .split.flip > figure { order: 0; } }
+@media (min-width: 44rem) { .sticky { position: sticky; top: 2rem; } }
+.split > .photo { margin-top: 0.4rem; }
+
+/* --- galleriet --- */
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 4 13rem;
+  column-gap: 1rem;
+}
+.gallery li { break-inside: avoid; margin-bottom: 1rem; }
+@media (max-width: 40rem) {
+  .gallery { columns: 2; column-gap: 0.6rem; }
+  .gallery li { margin-bottom: 0.6rem; }
+}
+.gallery a { display: block; border-radius: 3px; overflow: hidden; }
+.gallery img { width: 100%; transition: transform .4s ease; }
+.gallery a:hover img { transform: scale(1.03); }
+
+.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 92vh;
+}
+.lightbox::backdrop { background: rgb(40 25 20 / .82); }
+.lightbox img { max-width: 92vw; max-height: 92vh; width: auto; border-radius: 3px; cursor: zoom-out; }
+.lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1.25rem;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: 300 2.5rem/1 "Jost", sans-serif;
+  cursor: pointer;
+}
+/* tecknet ligger i CSS så att sidans text är exakt den gamla sajtens */
+.lightbox-close::before { content: "\00d7"; }
+
+/* --- smala textsidor --- */
+
+.narrow { max-width: 44rem; }
+.center-doodle { display: flex; justify-content: center; margin-top: 3rem; }
+.center-doodle img { width: clamp(9rem, 30vw, 14rem); mix-blend-mode: multiply; }
+.lost { display: flex; justify-content: center; padding-block: 2rem; }
+.lost img { width: 12rem; mix-blend-mode: multiply; }
+
+/* --- kontakt --- */
+
+.facts { margin: 1.8rem 0 0; display: grid; gap: 1.1rem; }
+.facts dt {
+  color: var(--red);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.facts dd { margin: 0.15rem 0 0; }
+/* inuti löptext (Anmälan, Klagomålshantering) behöver listan luft under sig */
+.prose .facts { margin-bottom: 1.6rem; }
+.prose .facts-inline { margin-top: 0; }
+.map {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 8;
+  min-height: 18rem;
+  border: 0;
+  border-radius: 3px;
+  filter: saturate(.85);
+}

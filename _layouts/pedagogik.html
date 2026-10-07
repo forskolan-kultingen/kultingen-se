@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="wrap split">
+  <div class="prose">
+    <h1>{{ page.rubrik }}</h1>
+    {{ page.ingress | markdownify }}
+    <ul>
+{%- for punkt in page.punkter %}
+      <li>{{ punkt }}</li>
+{%- endfor %}
+    </ul>
+  </div>
+  <figure class="photo sticky">
+    {% include bild.html bild=page.bild sizes="(min-width: 52rem) 34rem, 92vw" %}
+  </figure>
+</section>
+
+<section class="wrap split flip section-gap">
+  <div class="prose">
+    <h2>{{ page.pedagoger_rubrik }}</h2>
+    {{ page.pedagoger | markdownify }}
+  </div>
+  <figure class="photo">
+    {% include bild.html bild=page.pedagoger_bild sizes="(min-width: 52rem) 34rem, 92vw" lazy=true %}
+  </figure>
+</section>
+
+<dialog class="lightbox" aria-label="Bild">
+  <form method="dialog"><button class="lightbox-close" aria-label="Stäng"></button></form>
+  <img alt="">
+</dialog>
+<script src="{{ '/assets/gallery.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+
+<section class="band section-gap">
+  <div class="wrap">
+    <ul class="gallery">
+{%- for bild in page.galleri %}
+      {%- assign liten = bild.src | replace: '-1500.', '-750.' %}
+      <li><a href="{{ bild.src | relative_url }}"><img src="{{ liten | relative_url }}" alt="{{ bild.alt }}" loading="lazy"></a></li>
+{%- endfor %}
+    </ul>
+  </div>
+</section>
