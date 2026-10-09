@@ -6,11 +6,9 @@ title: Föräldrakooperativet Kultingen
 description: Bästa förskolan på södermalm stockholm
 lang: sv
 
-# Förhandsvisning: https://forskolan-kultingen.github.io/kultingen-se/
-# När kultingen.se pekar hit: url "https://kultingen.se", baseurl "" och
-# en fil CNAME med raden kultingen.se (se README.md).
-url: "https://forskolan-kultingen.github.io"
-baseurl: "/kultingen-se"
+# Sajten ligger på kultingen.se (filen CNAME). DNS hos Loopia, se README.md.
+url: "https://kultingen.se"
+baseurl: ""
 
 markdown: kramdown
 kramdown:

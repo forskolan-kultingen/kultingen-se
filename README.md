@@ -36,21 +36,17 @@ Bra att veta:
   hämtade originalbilderna från gamla kultingen.se. Båda behövs bara om det
   ska göras om.
 
-## Publicering
+## Publicering och domän
 
-1. Repot måste vara publikt (GitHub Pages är gratis för publika repon).
-2. Settings → Pages → Source: **Deploy from a branch**, branch `main`, mapp `/ (root)`.
-3. Sajten syns på https://forskolan-kultingen.github.io/kultingen-se/
-
-### Byta till kultingen.se
-
-1. I `_config.yml`: sätt `url: "https://kultingen.se"` och `baseurl: ""`.
-2. Lägg till en fil som heter `CNAME` med raden `kultingen.se`.
-3. Hos domänleverantören (ZoneEdit), ändra **bara** följande:
-   - A-posterna för `kultingen.se` till 185.199.108.153, 185.199.109.153,
-     185.199.110.153, 185.199.111.153;
-   - `www` som CNAME till `forskolan-kultingen.github.io`.
-4. **Rör inte MX-posterna.** De skickar mejlen till info@kultingen.se via Google.
-5. Settings → Pages: fyll i kultingen.se som Custom domain och kryssa i
-   **Enforce HTTPS** när certifikatet är klart.
-6. Säg upp Squarespace först när kultingen.se visar den nya sajten.
+- Sajten publiceras av GitHub Pages från grenen `main` (Settings → Pages) och
+  ligger på **https://kultingen.se** (filen `CNAME`).
+- **DNS för kultingen.se ligger hos Loopia** (namnservrar ns1/ns2.loopia.se,
+  bytt 2026-10-09 från ett gammalt privat ZoneEdit-konto):
+  - `@` A: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 (GitHub Pages)
+  - `www` CNAME `forskolan-kultingen.github.io.`
+  - `@` MX: 1 ASPMX.L.GOOGLE.COM, 5 ALT1/ALT2.ASPMX.L.GOOGLE.COM,
+    10 ASPMX2/ASPMX3.GOOGLEMAIL.COM (**mejlen, Google Workspace**)
+  - `mail` CNAME `ghs.google.com.`, `googleffffffffbe1a20fb` CNAME `google.com.`
+    (Googles gamla domänverifiering)
+- **Rör aldrig MX-posterna** utan att veta vad du gör. All mejl till @kultingen.se
+  går genom dem.
