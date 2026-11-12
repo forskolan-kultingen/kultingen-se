@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{%- comment -%}
+  Sida för nya föräldrar (/valkommen). Länkas inte från sajten och har
+  noindex: den nås bara av den som har fått adressen.
+{%- endcomment %}
+<section class="wrap split intro">
+  <div class="prose">
+    <h1>{{ page.rubrik }}</h1>
+    {{ page.ingress | markdownify }}
+  </div>
+  <figure class="doodled">
+    {% include bild.html bild=page.bild sizes="(min-width: 52rem) 34rem, 92vw" %}
+  </figure>
+</section>
+
+<section class="wrap section-gap">
+  <div class="prose narrow guide">
+    {{ content }}
+  </div>
+</section>

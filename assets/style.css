@@ -111,6 +111,16 @@ h2.small, h3 {
 .prose ol { padding-left: 1.4rem; }
 .prose ol li::marker { color: var(--red); font-weight: 600; }
 
+/* --- /valkommen: avsnitt (h2) med punkter (h3), luftigt och lätt att skumma --- */
+.guide > h2 {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+.guide > h2:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+.guide > h3 { margin: 2rem 0 0.5rem; color: var(--blue); }
+.guide > h2 + p { color: var(--ink-soft); }
+
 /* --- sidhuvud ---
    Mobile first: logotypen centrerad överst och menyn centrerad under den.
    Från 64rem (1024 px) står logotypen till vänster, i linje med texten

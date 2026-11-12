@@ -172,6 +172,29 @@ content:
       - { name: visa_adress, label: Visa adressen överst, type: boolean }
       - { name: body, label: Text, type: rich-text }
 
+  - name: valkommen
+    label: Välkommen (dold sida för nya föräldrar)
+    type: file
+    path: valkommen.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: guide }
+      - { name: permalink, type: string, hidden: true, default: /valkommen }
+      - { name: noindex, type: boolean, hidden: true, default: true }
+      - { name: titel, label: Titel i webbläsarfliken, type: string }
+      - { name: rubrik, label: Rubrik, type: string }
+      - { name: ingress, label: Välkomsttext, type: rich-text }
+      - name: bild
+        label: Bilden
+        type: object
+        fields:
+          - { name: src, label: Bild, type: image }
+          - { name: alt, label: Beskrivning av bilden, type: string }
+          - { name: bredd, type: number, hidden: true }
+          - { name: hojd, type: number, hidden: true }
+      - name: body
+        label: "Innehåll (## blir avsnitt, ### blir punkter)"
+        type: rich-text
+
   - name: kontaktuppgifter
     label: Kontaktuppgifter (sidfoten m.m.)
     type: file
