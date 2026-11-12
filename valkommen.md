@@ -30,6 +30,10 @@ I december går barnen i luciatåg på Kultingen.
 
 Innan sommaren har vi sommarfest och vernissage. Då får vi se allt som barnen har arbetat med under året, och vi säger hej då till de kultingar som ska sluta.
 
+### Afterdagis
+
+Ibland ordnas spontana afterdagis. Oftast ses vi i en park och grillar korv.
+
 ## Det praktiska
 
 På ett föräldrakooperativ hjälps vi åt. Här är det viktigaste att känna till.
@@ -55,6 +59,42 @@ Jouren är ett fint tillfälle att lära känna verksamheten, barnen och pedagog
 ### Fixdagar
 
 Vi har två fixdagar om året, en per termin. Datumet meddelas i god tid tillsammans med en lista över det som behöver göras. Du kan välja en uppgift i förväg, eller komma på dagen och ta något av det som är kvar. Det är lokalansvarig som håller i fixdagarna.
+
+### Föräldramöten
+
+Vi har regelbundna möten med hela föräldragruppen. Tidigare har de varit en gång i månaden, men den här terminen testar vi två möten per termin. Vilken frekvens vi har framöver är ännu inte bestämt.
+
+## Arbetsgrupper
+
+Alla föräldrar ingår i en arbetsgrupp. Det här är grupperna:
+
+### Ekonomi
+
+Mer info kommer.
+
+### Kommunikation
+
+Mer info kommer.
+
+### Rekrytering
+
+Mer info kommer.
+
+### HR
+
+Mer info kommer.
+
+### Social
+
+Mer info kommer.
+
+### Lokal
+
+Mer info kommer.
+
+### Ordförandegrupp
+
+Mer info kommer.
 
 ## Kultingen blir vad vi gör det till
 
