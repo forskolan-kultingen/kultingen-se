@@ -5,7 +5,7 @@ titel: Välkommen till Kultingen
 noindex: true
 rubrik: Välkommen till Kultingen!
 ingress: |-
-  Vad roligt att ni är en del av Kultingen! Vi hoppas och tror att ni och ert barn kommer att få några fantastiska år på en fantastisk förskola. Varmt välkomna!
+  Vad roligt att du/ni är en del av Kultingen! Vi hoppas och tror att du/ni och ditt/ert barn kommer att få några fantastiska år på en fantastisk förskola. Varmt välkomna!
 
   Här har vi samlat lite praktiskt som är bra att känna till.
 bild:
@@ -62,4 +62,4 @@ Att vara familj på ett föräldrakooperativ innebär lite mer engagemang, och d
 
 Har du ett intresse eller något du brinner för? Kanske spelar du basket, älskar att laga mat eller kan trolla fram roliga experiment. Prata med pedagogerna, själv eller ihop med en annan förälder, så hittar ni ett sätt att göra det tillsammans med barnen. Varje idé och varje insats gör skillnad, stora som små.
 
-Än en gång: vad roligt att ni är här! Undrar du över något är det bara att fråga andra föräldrar eller pedagogerna. Och saknar du något i den här listan, säg till styrelsen ([styrelsen@kultingen.se](mailto:styrelsen@kultingen.se)) så lägger vi till det.
+Än en gång: vad roligt att du/ni är här! Undrar du över något är det bara att fråga andra föräldrar eller pedagogerna. Och saknar du något i den här listan, säg till styrelsen ([styrelsen@kultingen.se](mailto:styrelsen@kultingen.se)) så lägger vi till det.
