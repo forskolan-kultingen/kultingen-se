@@ -34,9 +34,9 @@ Innan sommaren har vi sommarfest och vernissage. Då får vi se allt som barnen 
 
 På ett föräldrakooperativ hjälps vi åt. Här är det viktigaste att känna till.
 
-### Mellishandling
+### Handling
 
-Vi har ett rullande schema där en familj i taget handlar mellis för en vecka. Schemat görs i början av terminen.
+Vi har ett rullande schema där en familj i taget gör veckans handling till Kultingen. Schemat görs i början av terminen.
 
 1. Hämta inköpslistan och kortet hos Anna, gärna på fredagen.
 2. Handla så att allt finns på Kultingen på måndag morgon.
