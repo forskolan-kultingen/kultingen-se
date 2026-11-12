@@ -60,6 +60,6 @@ Vi har två fixdagar om året, en per termin. Datumet meddelas i god tid tillsam
 
 Att vara familj på ett föräldrakooperativ innebär lite mer engagemang, och det är precis det som gör Kultingen så speciellt. Här kan du vara med och forma ditt barns vardag på riktigt!
 
-Har du ett intresse eller något du brinner för? Kanske spelar du basket, älskar att laga mat eller kan trolla fram roliga experiment. Prata med pedagogerna, så hittar ni ett sätt att göra det tillsammans med barnen. Varje idé och varje insats gör skillnad, stora som små.
+Har du ett intresse eller något du brinner för? Kanske spelar du basket, älskar att laga mat eller kan trolla fram roliga experiment. Prata med pedagogerna, själv eller ihop med en annan förälder, så hittar ni ett sätt att göra det tillsammans med barnen. Varje idé och varje insats gör skillnad, stora som små.
 
 Än en gång: vad roligt att ni är här! Undrar du över något är det bara att fråga andra föräldrar eller pedagogerna. Och saknar du något i den här listan, säg till styrelsen ([styrelsen@kultingen.se](mailto:styrelsen@kultingen.se)) så lägger vi till det.
