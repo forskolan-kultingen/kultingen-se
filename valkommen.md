@@ -46,7 +46,7 @@ Det finns en WhatsApp-grupp för alla föräldrar på Kultingen, och det är bra
 
 ### Handling
 
-Vi har ett rullande schema där en familj i taget gör veckans handling till Kultingen. Schemat görs i början av terminen. Det är i huvudsak till mellis du handlar.
+Vi har ett rullande schema där en familj i taget gör veckans handling till Kultingen. Schemat görs i början av terminen. Det är i huvudsak för mellis du handlar.
 
 1. Hämta inköpslistan och kortet hos Anna, gärna på fredagen.
 2. Handla så att allt finns på Kultingen på måndag morgon.
