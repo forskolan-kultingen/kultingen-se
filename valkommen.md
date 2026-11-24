@@ -38,6 +38,10 @@ Ibland ordnas spontana afterdagis. Oftast ses vi i en park och grillar korv.
 
 På ett föräldrakooperativ hjälps vi åt. Här är det viktigaste att känna till.
 
+### WhatsApp-grupp
+
+Det finns en WhatsApp-grupp för alla föräldrar på Kultingen, och det är bra om alla är med i den. Är du inte med ännu? Be kommunikationsansvarig att lägga till dig.
+
 ### Handling
 
 Vi har ett rullande schema där en familj i taget gör veckans handling till Kultingen. Schemat görs i början av terminen.
