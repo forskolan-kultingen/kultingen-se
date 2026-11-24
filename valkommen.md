@@ -24,7 +24,9 @@ Under hösten blir det halloweendisco på Kultingen.
 
 ### Luciatåg
 
-I december går barnen i luciatåg på Kultingen.
+I december går barnen i luciatåg på Kultingen. Alla föräldrar bjuds in för att titta, och efteråt har vi knytisfika tillsammans.
+
+Spelar du något instrument? Vad kul! Prata med pedagogerna så hittar ni ett sätt för dig att vara med och spela.
 
 ### Sommarfest och vernissage
 
