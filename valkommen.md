@@ -102,6 +102,31 @@ Mer info kommer.
 
 Mer info kommer.
 
+## Styrelsearbete
+
+Styrelsen består i stora drag av en representant från varje arbetsgrupp, plus Anna. Det är inte hugget i sten och kan justeras vid behov, men ungefär så ser det ut. Du förväntas sitta i styrelsen två år per barn.
+
+De här positionerna finns i styrelsen:
+
+- Ordförande
+- Kommunikationsansvarig
+- HR-ansvarig
+- Lokalansvarig
+- Ekonomiansvarig
+- Socialansvarig
+- Anna, rektor
+
+## Övriga roller och uppgifter
+
+Utöver styrelserollerna finns också:
+
+- Skolchef, brukar vara någon i styrelsen
+- Internrevisor
+- Jouransvarig
+- Valberedning
+
+Känns det mycket när allt står uppradat så här? Ingen fara! Ingen gör allt på en gång, vi hjälps åt och du växer in i det i lugn och ro. Det brukar gå hur bra som helst, och är dessutom roligare än det låter.
+
 ## Kultingen blir vad vi gör det till
 
 Att vara familj på ett föräldrakooperativ innebär lite mer engagemang, och det är precis det som gör Kultingen så speciellt. Här kan du vara med och forma ditt barns vardag på riktigt!
